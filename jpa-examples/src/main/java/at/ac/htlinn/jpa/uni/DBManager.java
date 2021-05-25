@@ -69,6 +69,7 @@ public class DBManager {
 		// JPQL - Java Persistence Query Language - nicht SQL
 		String sql = "SELECT s FROM Student s";
 		Query query = em.createQuery(sql, Student.class);
+		query.setMaxResults(2); //Funktioniert wie das limit in SQL
 		@SuppressWarnings("unchecked")
 		List<Student> studenten = query.getResultList();
 		em.close();
