@@ -17,6 +17,14 @@ public class DBManager {
 		
 	}
 
+	public Assistent getAssistent(long persNr)
+	{
+		EntityManager em = emf.createEntityManager();
+		Assistent assistent = em.find(Assistent.class, persNr);;
+		em.close();
+		return assistent;
+	}
+	
 	public Student getStudent(long matrNr) {
 		EntityManager em = emf.createEntityManager();
 		// JPQL - Java Persistence Query Language - nicht SQL
