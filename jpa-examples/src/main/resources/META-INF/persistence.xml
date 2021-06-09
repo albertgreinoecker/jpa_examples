@@ -5,11 +5,13 @@
   
       <persistence-unit name="uni" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-     
-      <!-- ALLE Entity KLassen hier aufzählen -->  
+        
+      <!-- Entweder ALLE Entity KLassen hier aufzählen oder exclude-unlisted-classes auf false, dann werden alle @Entity-Klassen aufgenommen 
       <class>at.ac.htlinn.jpa.uni.Student</class>
       <class>at.ac.htlinn.jpa.uni.Professor</class>
-        
+      <class>at.ac.htlinn.jpa.uni.Assistent</class>
+        --> 
+       <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <!-- JDBC Connection Info -->
       <property name="javax.persistence.jdbc.driver"   value="com.mysql.cj.jdbc.Driver" />
