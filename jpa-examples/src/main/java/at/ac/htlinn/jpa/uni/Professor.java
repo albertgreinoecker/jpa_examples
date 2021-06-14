@@ -1,9 +1,13 @@
 package at.ac.htlinn.jpa.uni;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +20,10 @@ public class Professor {
 	private String rang;
 	private String raum;
 
+	@OneToMany
+	@JoinColumn(name = "boss")
+	private List<Assistent> assistenten;
+	
 	public Professor() {
 	}
 
@@ -56,6 +64,16 @@ public class Professor {
 
 	public void setRaum(String raum) {
 		this.raum = raum;
+	}
+
+	
+	
+	public List<Assistent> getAssistenten() {
+		return assistenten;
+	}
+
+	public void setAssistenten(List<Assistent> assistenten) {
+		this.assistenten = assistenten;
 	}
 
 	@Override

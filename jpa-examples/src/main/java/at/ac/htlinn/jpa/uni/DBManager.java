@@ -17,10 +17,18 @@ public class DBManager {
 		
 	}
 
+	public Professor getProfessor(long persNr)
+	{
+		EntityManager em = emf.createEntityManager();
+		Professor professor = em.find(Professor.class, persNr);
+		em.close();
+		return professor;
+	}
+	
 	public Assistent getAssistent(long persNr)
 	{
 		EntityManager em = emf.createEntityManager();
-		Assistent assistent = em.find(Assistent.class, persNr);;
+		Assistent assistent = em.find(Assistent.class, persNr);
 		em.close();
 		return assistent;
 	}
