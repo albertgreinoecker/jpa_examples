@@ -47,6 +47,12 @@ public class Runner {
 		
 		System.out.println("Vorlesung:");
 		Vorlesung vorlesung = db.getVorlesung(4052);
+		
+		List<Student> studenten = vorlesung.getStudenten();
+		for (Student student : studenten)
+		{
+			System.out.println(student);
+		}
 		System.out.println(vorlesung);
 		Professor gelesenVon = vorlesung.getGelesenVon();
 		
@@ -56,6 +62,11 @@ public class Runner {
 			System.out.println(assi);
 		}
 		
+		System.out.println("NOTEN:");
+		for (Note n : vorlesung.getNoten())
+		{
+			System.out.println(n);
+		}
 		
 		
 		db.close();
