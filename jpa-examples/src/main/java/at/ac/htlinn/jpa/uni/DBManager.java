@@ -17,6 +17,14 @@ public class DBManager {
 		
 	}
 
+	public Vorlesung getVorlesung(long vorlNr)
+	{
+		EntityManager em = emf.createEntityManager();
+		Vorlesung vorlesung = em.find(Vorlesung.class, vorlNr);
+		em.close();
+		return vorlesung;
+	}
+	
 	public Professor getProfessor(long persNr)
 	{
 		EntityManager em = emf.createEntityManager();

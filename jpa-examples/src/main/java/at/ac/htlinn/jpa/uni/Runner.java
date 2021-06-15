@@ -45,6 +45,19 @@ public class Runner {
 			System.out.println(assi);
 		}
 		
+		System.out.println("Vorlesung:");
+		Vorlesung vorlesung = db.getVorlesung(4052);
+		System.out.println(vorlesung);
+		Professor gelesenVon = vorlesung.getGelesenVon();
+		
+		assis = gelesenVon.getAssistenten();
+		for (Assistent assi : assis)
+		{
+			System.out.println(assi);
+		}
+		
+		
+		
 		db.close();
 		System.out.println("Fertig!");
 	}
