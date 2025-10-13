@@ -1,12 +1,15 @@
 package at.ac.htlinn.jpa.uni;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Runner {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		DBManager db = new DBManager();
-
+		db.fillFithTestData();
+		
+		
 //		List<Student> studenten = db.getStudenten();
 //		System.out.println("Liste von Studenten:");
 //		for (Student student : studenten) {
