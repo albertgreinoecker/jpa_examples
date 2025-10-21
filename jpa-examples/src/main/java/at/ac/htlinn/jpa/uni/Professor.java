@@ -8,10 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
